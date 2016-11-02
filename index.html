@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>图片水平垂直居中</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #e3e3e3;
+  }
+  
+  img {
+    width: 200px;
+    height: auto;
+  }
+  
+  #m1 {
+    background-image: url(pic1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 200px auto;
+  }
+  
+  #m2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  
+  #m3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 142px;
+    margin-top: -71px;
+    margin-left: -100px;
+  }
+  
+  #m4 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  #m5 {
+    display: flex;
+  }
+  
+  #m5 > img {
+    margin: auto;
+  }
+  
+  #m6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #m7 {
+    text-align: center;
+  }
+  
+  #m7:before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+  }
+  
+  #m7 > .content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  </style>
+</head>
+
+<body>
+  <p>使用背景图</p>
+  <div class="container" id="m1"></div>
+  <p>使用绝对定位1</p>
+  <div class="container"><img src="pic1.jpg" alt="" id="m2"></div>
+  <p>使用绝对定位2</p>
+  <div class="container"><img src="pic1.jpg" alt="" id="m3"></div>
+  <p>使用表格样式</p>
+  <div class="container" id="m4"><img src="pic1.jpg" alt=""></div>
+  <p>使用flex</p>
+  <div class="container" id="m5"><img src="pic1.jpg" alt=""></div>
+  <p>使用transform</p>
+  <div class="container"><img src="pic1.jpg" alt="" id="m6"></div>
+  <p>使用before伪类</p>
+  <div class="container" id="m7"><img src="pic1.jpg" alt="" class="content"></div>
+</body>
+
+</html>
